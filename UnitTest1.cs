@@ -25,6 +25,29 @@ namespace TarifTaxi
         }
 
 
+        [TestMethod]
+        public void TestCalculateTaxiRate_NightTime_5km()
+        {
+            Assert.AreEqual(35, calculateTaxiRate(5, 0));
+        }
+
+        [TestMethod]
+        public void TestCalculateTaxiRate_NightTime_21km()
+        {
+            Assert.AreEqual(210, calculateTaxiRate(21, 0));
+        }
+
+        [TestMethod]
+        public void TestCalculateTaxiRate_NightTime_65km()
+        {
+            Assert.AreEqual(520, calculateTaxiRate(65, 0));
+        }
+
+
+
+
+
+
         public double calculateTaxiRate(double distance, double hour)
         {
             double realUnitFee = 0;
