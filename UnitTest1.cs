@@ -11,10 +11,17 @@ namespace TarifTaxi
         {
             Assert.AreEqual(2, calculateTaxiRate(5,10);
         }
+
         [TestMethod]
         public void TestCalculateTaxiRate_DayTime_21km()
         {
             Assert.AreEqual(168, calculateTaxiRate(21, 10);
+        }
+
+        [TestMethod]
+        public void TestCalculateTaxiRate_DayTime_65km()
+        {
+            Assert.AreEqual(390, calculateTaxiRate(65, 10);
         }
 
 
