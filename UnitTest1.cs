@@ -51,19 +51,43 @@ namespace TarifTaxi
         public double calculateTaxiRate(double distance, double hour)
         {
             double realUnitFee = 0;
-            if(distance <= 20)
+
+            //day time rate
+            if (hour >= 8 && hour <= 21)
             {
-                realUnitFee = 5;
+                if (distance <= 20)
+                {
+                    realUnitFee = 5;
+                }
+
+                if (distance >= 21 && distance < 60)
+                {
+                    realUnitFee = 4 * 2;
+                }
+
+                if (distance > 60)
+                {
+                    realUnitFee = 3 * 2;
+                }
             }
 
-            if (distance >= 21 && distance < 60)
+            //night time rate
+            else if (hour < 8 || hour > 21)
             {
-                realUnitFee = 4*2;
-            }
+                if (distance <= 20)
+                {
+                    realUnitFee = 7;
+                }
 
-            if (distance > 60)
-            {
-                realUnitFee = 3*2;
+                if (distance >= 21 && distance < 60)
+                {
+                    realUnitFee = 5 * 2;
+                }
+
+                if (distance > 60)
+                {
+                    realUnitFee = 4 * 2;
+                }
             }
 
             return Math.Round((distance * realUnitFee), 2);
