@@ -9,7 +9,7 @@ namespace TarifTaxi
         [TestMethod]
         public void TestCalculateTaxiRate_DayTime_5km()
         {
-            Assert.AreEqual(2, calculateTaxiRate(5,10));
+            Assert.AreEqual(25, calculateTaxiRate(5,10));
         }
 
         [TestMethod]
